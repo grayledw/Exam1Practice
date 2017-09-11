@@ -320,7 +320,7 @@ def problem0c(circle, n, window):
         circle1.attach_to(window)
 
         window.render(0.5)
-        
+
         x = x + 2 * radius
 
 
