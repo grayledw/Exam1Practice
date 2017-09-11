@@ -2,8 +2,8 @@
 PRACTICE Test 1, problem 1.
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.  September 2016.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Derek Grayless.  September 2016.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 # Students:
@@ -24,7 +24,7 @@ Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
 #    STOP working on that problem and ASK YOUR INSTRUCTOR FOR HELP
 #    on it, in class or via Piazza.
 ########################################################################
-
+import math
 
 def main():
     """ Calls the   TEST   functions in this module. """
@@ -152,6 +152,12 @@ def problem1a(m, n):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   10 minutes.
     # ------------------------------------------------------------------
+    total = 0
+    a = ((n**2) - (m**2))
+    for k in range(a):
+        total = total + math.sin(k)
+
+    return total
 
 
 def test_problem1b():
