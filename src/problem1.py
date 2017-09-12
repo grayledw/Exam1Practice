@@ -120,10 +120,25 @@ def test_problem1a():
     print('Test 2 expected:', expected, '(approximately)')
     print('       actual:  ', answer)
 
+
     # ------------------------------------------------------------------
     # TODO: 2 (continued).
     # Below this comment, add 2 more test cases of your own choosing.
     # ------------------------------------------------------------------
+
+    # Test 3:
+    expected = 0.174524064 # This is APPROXIMATELY the correct answer.
+    answer = problem1a(0, 1)
+    print()
+    print('Test 1 expected:', expected, '(approximately)')
+    print('       actual:  ', answer)
+
+    # Test 4:
+    expected = 0.1744443331 # This is APPROXIMATELY the correct answer.
+    answer = problem1a(0, 2)
+    print()
+    print('Test 2 expected:', expected, '(approximately)')
+    print('       actual:  ', answer)
 
 
 def problem1a(m, n):
@@ -144,7 +159,7 @@ def problem1a(m, n):
       -- If m is 30 and n is 100, the correct answer is about 1.278.
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # Done: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
     # ------------------------------------------------------------------
@@ -153,9 +168,9 @@ def problem1a(m, n):
     #    TIME ESTIMATE:   10 minutes.
     # ------------------------------------------------------------------
     total = 0
-    a = ((n**2) - (m**2))
+    a = ((n ** 2) - (m ** 2) + 1)
     for k in range(a):
-        total = total + math.sin(k)
+        total = total + math.sin((k + (m ** 2)))
 
     return total
 
@@ -176,6 +191,34 @@ def test_problem1b():
     print('--------------------------------------------------')
     print('Testing the   problem1b   function:')
     print('--------------------------------------------------')
+
+    # Test 1:
+    expected = 5  # This is APPROXIMATELY the correct answer.
+    answer = problem1b(3, 5)
+    print()
+    print('Test 1 expected:', expected, '(approximately)')
+    print('       actual:  ', answer)
+
+    # Test 2:
+    expected = 1  # This is APPROXIMATELY the correct answer.
+    answer = problem1b(2, 1)
+    print()
+    print('Test 2 expected:', expected, '(approximately)')
+    print('       actual:  ', answer)
+
+    # Test 3:
+    expected = 44  # This is APPROXIMATELY the correct answer.
+    answer = problem1b(5, 40)
+    print()
+    print('Test 1 expected:', expected, '(approximately)')
+    print('       actual:  ', answer)
+
+    # Test 4:
+    expected = 3  # This is APPROXIMATELY the correct answer.
+    answer = problem1b(1, 5)
+    print()
+    print('Test 2 expected:', expected, '(approximately)')
+    print('       actual:  ', answer)
 
 
 def problem1b(m, f):
@@ -208,6 +251,14 @@ def problem1b(m, f):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   10 to 15 minutes.
     # ------------------------------------------------------------------
+    total = 0
+    a = ((f * m) - m)
+    for k in range(a + m):
+        if is_prime(k) == True:
+            total = total + 1
+        else:
+            total = total + 0
+    return total
 
 
 def test_problem1c():
@@ -306,6 +357,16 @@ def problem1c(n):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   15 to 20 minutes.
     # ------------------------------------------------------------------
+    total = 0
+    for k in range(n):
+        if is_prime(k) == True:
+            total = total * (k + 2)
+        else:
+            pass
+    return total
+    sum_of_digits(total)
+
+
 
 
 # ----------------------------------------------------------------------
