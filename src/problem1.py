@@ -49,8 +49,9 @@ def is_prime(n):
     for k in range(2, (n // 2) + 1):
         if n % k == 0:
             return False
-
     return True
+
+
     # ------------------------------------------------------------------
     # Students:
     #   Do NOT touch the above  is_prime  function - it has no TODO.
@@ -127,14 +128,14 @@ def test_problem1a():
     # ------------------------------------------------------------------
 
     # Test 3:
-    expected = 0.174524064 # This is APPROXIMATELY the correct answer.
+    expected = 0.841470 # This is APPROXIMATELY the correct answer.
     answer = problem1a(0, 1)
     print()
     print('Test 1 expected:', expected, '(approximately)')
     print('       actual:  ', answer)
 
     # Test 4:
-    expected = 0.1744443331 # This is APPROXIMATELY the correct answer.
+    expected = 1.135085924 # This is APPROXIMATELY the correct answer.
     answer = problem1a(0, 2)
     print()
     print('Test 2 expected:', expected, '(approximately)')
@@ -214,8 +215,8 @@ def test_problem1b():
     print('       actual:  ', answer)
 
     # Test 4:
-    expected = 3  # This is APPROXIMATELY the correct answer.
-    answer = problem1b(1, 5)
+    expected = 4  # This is APPROXIMATELY the correct answer.
+    answer = problem1b(2, 5)
     print()
     print('Test 2 expected:', expected, '(approximately)')
     print('       actual:  ', answer)
@@ -253,8 +254,8 @@ def problem1b(m, f):
     # ------------------------------------------------------------------
     total = 0
     a = ((f * m) - m)
-    for k in range(a + m):
-        if is_prime(k) == True:
+    for k in range(a + 1):
+        if is_prime(k + m) == True:
             total = total + 1
         else:
             total = total + 0
@@ -357,14 +358,13 @@ def problem1c(n):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:   15 to 20 minutes.
     # ------------------------------------------------------------------
-    total = 0
+    total = 1
     for k in range(n):
-        if is_prime(k) == True:
-            total = total * (k + 2)
-        else:
-            pass
-    return total
-    sum_of_digits(total)
+        if is_prime(k + 1) == True:
+            total = total * (k + 1)
+    return sum_of_digits(total)
+
+
 
 
 
