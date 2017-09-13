@@ -73,6 +73,20 @@ def test_problem2a():
 
 
 def problem2a(circle, rectangle, window):
+
+    circle.attach_to(window)
+    rectangle.attach_to(window)
+    window.render()
+    window.continue_on_mouse_click()
+    line = rg.Line(rectangle.get_upper_right_corner(), rectangle.get_lower_left_corner())
+    line.arrow = 'last'
+    line.attach_to(window)
+    window.render()
+    window.continue_on_mouse_click()
+    circle.fill_color = rectangle.outline_color
+    window.render()
+    window.continue_on_mouse_click()
+
     """
     See   problem2a_picture.pdf   in this project for pictures
     that may help you better understand the following specification:
@@ -174,6 +188,23 @@ def problem2b(rect, n, delta, win):
       :type delta:  int
       :type win:    rg.RoseWindow
     """
+    heightincrease = rect.get_height()
+    widthincrease = rect.get_width()
+    rect.attach_to(win)
+    for k in range(n):
+        heightincrease = heightincrease + (delta * 2)
+        widthincrease = widthincrease + (delta * 2)
+        corner1 = rect.get_upper_right_corner()
+        corner2 = rect.get_lower_left_corner()
+        rectangle = rg.Rectangle(corner1)
+        rectangle.attach_to(win)
+
+    rect = curr
+    for k in range(n);
+        
+
+
+
     # ------------------------------------------------------------------
     # TODO: 3. Implement and test this function.
     #          Tests have been written for you (above).
