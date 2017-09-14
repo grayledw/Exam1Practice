@@ -160,6 +160,24 @@ def test_problem2b():
 
 
 def problem2b(rect, n, delta, win):
+
+    #center_point = rect.get_center()
+    corner1 = rect.get_lower_left_corner()
+    corner2 = rect.get_upper_right_corner()
+    rect.attach_to(win)
+    for k in range(n):
+        corner1.x = corner1.x - delta
+        corner1.y = corner1.y + delta
+        corner2.x = corner2.x + delta
+        corner2.y = corner2.y - delta
+        rectangle = rg.Rectangle(rg.Point(corner1.x, corner1.y), rg.Point(corner2.x, corner2.y))
+        rectangle.attach_to(win)
+
+
+
+
+    win.render()
+
     """
     See   problem2b_picture.pdf   in this project for pictures
     that may help you better understand the following specification:
@@ -188,19 +206,21 @@ def problem2b(rect, n, delta, win):
       :type delta:  int
       :type win:    rg.RoseWindow
     """
-    heightincrease = rect.get_height()
-    widthincrease = rect.get_width()
-    rect.attach_to(win)
-    for k in range(n):
-        heightincrease = heightincrease + (delta * 2)
-        widthincrease = widthincrease + (delta * 2)
-        corner1 = rect.get_upper_right_corner()
-        corner2 = rect.get_lower_left_corner()
-        rectangle = rg.Rectangle(corner1)
-        rectangle.attach_to(win)
+   # heightincrease = rect.get_height()
+   # widthincrease = rect.get_width()
+   # rect.attach_to(win)
+   # for k in range(n):
+    #    heightincrease = heightincrease + (delta * 2)
+     #   widthincrease = widthincrease + (delta * 2)
+      #  corner1 = rect.get_upper_right_corner()
+       # corner2 = rect.get_lower_left_corner()
+        #rectangle = rg.Rectangle(corner1)
+        #rectangle.attach_to(win)
 
-    rect = curr
-    for k in range(n);
+
+
+    #rect = curr
+    #for k in range(n);
 
 
 
