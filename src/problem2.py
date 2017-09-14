@@ -201,7 +201,7 @@ def problem2b(rect, n, delta, win):
 
     rect = curr
     for k in range(n);
-        
+
 
 
 
